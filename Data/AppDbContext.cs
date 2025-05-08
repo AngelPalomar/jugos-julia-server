@@ -1,8 +1,9 @@
+using jugos_julia_server.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace jugos_julia_server.Models
+namespace jugos_julia_server.Data
 {
-    class AppDbContext : DbContext
+    public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
