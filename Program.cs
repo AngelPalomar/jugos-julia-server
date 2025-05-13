@@ -11,6 +11,17 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddControllers();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "AllowFlutterApp",
+        policy =>
+        {
+            policy.WithOrigins("*") // Cambia por el puerto real de tu app Flutter
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

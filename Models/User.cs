@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace jugos_julia_server.Models
 {
+    [Index(nameof(Phone), IsUnique = true)]
     public class User
     {
         [Key]
